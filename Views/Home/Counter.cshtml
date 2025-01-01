@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Counter Page";
+    int counter = 0;  // Inițializarea unui contor
+}
+
+<h2>Numărător: <span id="counterValue">@counter</span></h2>
+
+<button id="incrementButton">Increment</button>
+
+<script>
+    let counter = 0;  // Stocăm valoarea contorului pe client
+
+    // Când butonul este apăsat, incrementăm valoarea contorului
+    document.getElementById("incrementButton").addEventListener("click", function () {
+        counter++;
+        document.getElementById("counterValue").textContent = counter;
+    });
+</script>

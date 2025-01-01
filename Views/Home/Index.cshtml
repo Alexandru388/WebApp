@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Message"]</h1>
+    <a href="@Url.Action("Counter", "Home")">
+        <button>Accesează pagina de Counter</button>
+    </a>
+    <a href="@Url.Action("Login", "Home")">
+        <button>Logare</button>
+    </a>
+</div>
+@model IEnumerable<WebApplication1.Models.Administrator>  
+
+<h2>Lista administratorilor</h2>
+
+@if (Model != null && Model.Any())
+{
+<ul>
+    @foreach (var admin in Model)
+    {
+        <li>@admin.Nume</li>  <!-- Afișează numele fiecărui administrator -->
+    }
+</ul>
+}
+else
+{
+<p>Nu există administratori.</p>  <!-- Mesaj dacă lista este goală -->
+}
+
+<a href="@Url.Action("Index", "Administrator")" class="btn btn-primary">Vezi administratorii</a>
