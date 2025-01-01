@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Logare Student";
+}
+
+<h2>Logare Student</h2>
+
+<form method="post" asp-action="Login">
+    <div class="form-group">
+        <label for="nume">Nume</label>
+        <input type="text" class="form-control" id="nume" name="nume" required />
+    </div>
+    <div class="form-group">
+        <label for="numarMatricol">Număr Matricol</label>
+        <input type="text" class="form-control" id="numarMatricol" name="numarMatricol" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+{
+    <div class="alert alert-danger mt-2">
+        @ViewData["ErrorMessage"]
+    </div>
+}

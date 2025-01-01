@@ -1,5 +1,5 @@
 ﻿@{
-ViewData["Title"] = "Login";
+    ViewData["Title"] = "Login Administrator";
 }
 
 <h2>Login</h2>
@@ -13,13 +13,12 @@ ViewData["Title"] = "Login";
         <label for="parola">Parola</label>
         <input type="password" class="form-control" id="parola" name="parola" required />
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-primary">Login Administrator</button>
 </form>
 
-<!-- Afișează mesajele de eroare, dacă există -->
 @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
 {
-<div class="alert alert-danger mt-2">
-    @ViewData["ErrorMessage"]
-</div>
+    <div class="alert alert-danger mt-2">
+        @ViewData["ErrorMessage"]
+    </div>
 }

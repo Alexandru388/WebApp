@@ -16,21 +16,50 @@ namespace WebApplication1.Controllers
 
         // Acțiune pentru a obține administratorii din baza de date
        
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> List()
         {
-            // Obține lista administratorilor din baza de date
             var administratori = await _context.Administratori.ToListAsync();
 
-            // Verifică dacă lista este null sau goală
-            if (administratori == null || !administratori.Any())
+            if (!administratori.Any())
             {
-                // Dacă nu sunt administratori, poți adăuga un mesaj de eroare sau o acțiune
-                return View("Index");  // Specifică explict că vrei să folosești Index.cshtml din Views/Home/
+                // Dacă nu sunt administratori, trimite un mesaj că lista este goală
+                ViewData["Message"] = "Nu există administratori.";
+            }
+            else
+            {
+                // Altfel, trimite lista administratorilor
+                ViewData["Message"] = null; // Poți seta mesajul la null sau la un alt mesaj
             }
 
-            // Trimite lista de administratori la view
-            return View("Index", administratori);  // Specifică explict că vrei să folosești Index.cshtml din Views/Home/
+            return View(administratori);
         }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(string email, string parola)
+        {
+            // Caută administratorul cu email-ul și parola specificate
+            var admin = await _context.Administratori
+                .FirstOrDefaultAsync(a => a.Email == email && a.Parola == parola);
+
+            if (admin != null)
+            {
+                // Dacă autentificarea este reușită
+                // Poți seta o sesiune, un cookie sau redirecționa utilizatorul către altă pagină
+                return RedirectToAction("Index", "Home"); // Exemplu de redirecționare
+            }
+            else
+            {
+                // Dacă autentificarea eșuează, afișează un mesaj de eroare
+                ViewData["ErrorMessage"] = "Email-ul sau parola sunt incorecte.";
+                return View();
+            }
+        }
+
+
 
 
     }

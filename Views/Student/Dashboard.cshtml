@@ -1,0 +1,23 @@
+﻿@model List<WebApplication1.Models.CazareInfo>
+
+<h2>Informații Cazare</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nume Cămin</th>
+        <th>Număr Cameră</th>
+        <th>Număr Colegi</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.NumeCamin</td>
+            <td>@item.NumarCamera</td>
+            <td>@item.NumarColegi</td>
+        </tr>
+    }
+    </tbody>
+</table>

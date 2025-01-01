@@ -13,4 +13,4 @@ public class Student
     {
         Cazari = new List<Cazare>();
     }
-}
+}   

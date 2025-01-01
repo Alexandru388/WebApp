@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebApplication1.Administrator>
+
+@{
+    ViewData["Title"] = "Lista Administratorilor";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model?.Any() == true)
+{
+    <ul>
+        @foreach (var admin in Model)
+        {
+            <li>@admin.Nume</li> <!-- Afișează numele fiecărui administrator -->
+        }
+    </ul>
+}
+else
+{
+    <p>@ViewData["Message"]</p> <!-- Mesaj personalizat dacă lista este goală -->
+}
+
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Înapoi la pagina principală</a>

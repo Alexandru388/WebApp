@@ -25,7 +25,7 @@ public class HomeController : Controller
     public IActionResult Login()
     {
         return View();
-    }
+    }   
     public IActionResult Privacy()
     {
         return View();
