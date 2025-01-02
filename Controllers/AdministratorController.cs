@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc; 
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication1.Models;
 
-namespace WebApplication1.Controllers   
+
+namespace WebApplication1.Controllers
 {
     public class AdministratorController : Controller
     {
@@ -15,7 +17,7 @@ namespace WebApplication1.Controllers
         }
 
         // Acțiune pentru a obține administratorii din baza de date
-       
+
         public async Task<IActionResult> List()
         {
             var administratori = await _context.Administratori.ToListAsync();
@@ -33,11 +35,13 @@ namespace WebApplication1.Controllers
 
             return View(administratori);
         }
+
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Login(string email, string parola)
         {
@@ -49,7 +53,7 @@ namespace WebApplication1.Controllers
             {
                 // Dacă autentificarea este reușită
                 // Poți seta o sesiune, un cookie sau redirecționa utilizatorul către altă pagină
-                return RedirectToAction("Index", "Home"); // Exemplu de redirecționare
+                return View("AdminWindow");
             }
             else
             {
@@ -58,9 +62,5 @@ namespace WebApplication1.Controllers
                 return View();
             }
         }
-
-
-
-
     }
 }
