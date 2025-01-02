@@ -77,5 +77,25 @@ namespace WebApplication1.Controllers
     return RedirectToAction("CaminDashboard", "Camine");
 }
 
+      
+public IActionResult AfisareCamine()
+{
+    var camine = _context.Camine
+        .Include(c => c.Camere) // Include relația cu Camere
+        .Select(c => new CaminViewModel
+        {
+            CaminID = c.CaminID,
+            Nume = c.Nume,
+            Adresa = c.Adresa,
+            CamereLibere = c.Camere.Count(cam => cam.Stare == "Disponibila") // Numărăm camerele libere
+        })
+        .ToList();
+
+    return View(camine);
+}
+
+
+
     }
+    
 }

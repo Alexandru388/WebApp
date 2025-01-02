@@ -25,9 +25,10 @@ namespace WebApplication1
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+            
             // Configure CazareInfo as a keyless entity
             modelBuilder.Entity<CazareInfo>().HasNoKey();
+            modelBuilder.Entity<Models.Camin>().HasNoKey();
         }
     }
 

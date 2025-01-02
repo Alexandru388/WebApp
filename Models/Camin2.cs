@@ -8,5 +8,5 @@ public class Camin2
     public int NumarCamere { get; set; }
        
     public int UniversitateID { get; set; }  // Aici se păstrează ID-ul
-
+    public ICollection<Camera> Camere { get; set; } // Trebuie să fie o colecție
 }
