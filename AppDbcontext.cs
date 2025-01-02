@@ -13,6 +13,17 @@ namespace WebApplication1
         public DbSet<Cazare> Cazari { get; set; }
         public DbSet<Administrator> Administratori { get; set; }
         public DbSet<Log> Loguri { get; set; }
+        
+        
+        public DbSet<CazareInfo> CazareInfos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Configure CazareInfo as a keyless entity
+            modelBuilder.Entity<CazareInfo>().HasNoKey();
+        }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
