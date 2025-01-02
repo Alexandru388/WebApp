@@ -17,63 +17,71 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApplication1
 build_property.RootNamespace = WebApplication1
-build_property.ProjectDir = C:\Users\Valentin\RiderProjects\WebApp\
+build_property.ProjectDir = C:\Users\bivol\RiderProjects\WebApplication1\WebApplication1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Valentin\RiderProjects\WebApp
+build_property.MSBuildProjectDirectory = C:\Users\bivol\RiderProjects\WebApplication1\WebApplication1
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Administrator/AdminWindow.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Administrator/AdminWindow.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxBZG1pbldpbmRvdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Administrator/List.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Administrator/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Administrator/Login.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Administrator/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Home/Counter.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Camine/CaminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtaW5lXENhbWluRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Camine/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtaW5lXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Home/Counter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb3VudGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Home/Privacy.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Shared/Error.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Shared/Index.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Shared/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Student/Dashboard.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Student/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Student/Login.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Student/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/_ViewImports.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/_ViewStart.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Shared/_Layout.cshtml]
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bddmc6yalx

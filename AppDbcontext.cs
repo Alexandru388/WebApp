@@ -20,6 +20,7 @@ namespace WebApplication1
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
+      
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,11 +31,4 @@ namespace WebApplication1
         }
     }
 
-    // CazareInfo class definition (make sure this matches your SQL query result)
-    // public class CazareInfo
-    // {
-    //     public string NumeCamin { get; set; }  // Maps to the "C.Nume" column in your SQL
-    //     public int NumarCamera { get; set; }  // Maps to "Cam.NumarCamera"
-    //     public int NumarColegi { get; set; }  // Maps to "NumarColegi"
-    // }
 }

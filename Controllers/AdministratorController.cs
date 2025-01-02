@@ -53,7 +53,7 @@ namespace WebApplication1.Controllers
             {
                 // Dacă autentificarea este reușită
                 // Poți seta o sesiune, un cookie sau redirecționa utilizatorul către altă pagină
-                return RedirectToAction("INDEX", "Home"); // Exemplu de redirecționare
+                return RedirectToAction("CaminDashboard", "Camine");  // Exemplu de redirecționare
             }
             else
             {
