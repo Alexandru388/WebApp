@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\bivol\RiderProjects\WebApplication1\WebApplication1
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Administrator/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxBZG1pbkRhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Administrator/AdminWindow.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxBZG1pbldpbmRvdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Administrator/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Camere/GestionareCamereDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtZXJlXEdlc3Rpb25hcmVDYW1lcmVEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/bivol/RiderProjects/WebApplication1/WebApplication1/Views/Camine/AfisareCamine.cshtml]

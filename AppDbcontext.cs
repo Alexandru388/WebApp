@@ -28,7 +28,7 @@ namespace WebApplication1
             
             // Configure CazareInfo as a keyless entity
             modelBuilder.Entity<CazareInfo>().HasNoKey();
-            modelBuilder.Entity<Models.Camin>().HasNoKey();
+         
         }
     }
 

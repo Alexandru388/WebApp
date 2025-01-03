@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Gestionare Camere";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<!-- Formular pentru adăugarea unei camere noi -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h5>Adaugă Cameră</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="AdaugaCamera" method="post">
+            <div class="form-group">
+                <label for="numarCamera">Număr Cameră</label>
+                <input type="number" id="numarCamera" name="NumarCamera" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="capacitate">Capacitate</label>
+                <input type="number" id="capacitate" name="Capacitate" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="stare">Stare</label>
+                <select id="stare" name="Stare" class="form-control">
+                    <option value="Disponibila">Disponibilă</option>
+                    <option value="Ocupata">Ocupată</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="caminId">Selectează Cămin</label>
+                <select id="caminId" name="CaminID" class="form-control">
+                    @foreach (var camin in ViewBag.Camine)
+                    {
+                        <option value="@camin.CaminID">@camin.Nume</option>
+                    }
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Adaugă Cameră</button>
+        </form>
+    </div>
+</div>
+
+<!-- Formular pentru modificarea stării unei camere -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h5>Modifică Starea unei Camere</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="ModificaStareCamera" method="post">
+            <div class="form-group">
+                <label for="numarCamera">Număr Cameră</label>
+                <input type="number" id="numarCamera" name="numarCamera" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="stare">Noua Stare</label>
+                <select id="stare" name="stare" class="form-control" required>
+                    <option value="Disponibila">Disponibilă</option>
+                    <option value="Ocupata">Ocupată</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-warning">Modifică Starea</button>
+        </form>
+    </div>
+</div>
+
+<!-- Formular pentru ștergerea unei camere -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h5>Șterge Cameră</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="StergeCamera" method="post">
+            <div class="form-group">
+                <label for="cameraID">ID Cameră</label>
+                <input type="number" id="cameraID" name="cameraID" class="form-control" required />
+            </div>
+
+            <button type="submit" class="btn btn-danger">Șterge Cameră</button>
+        </form>
+    </div>
+</div>

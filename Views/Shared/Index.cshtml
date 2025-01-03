@@ -2,16 +2,20 @@
     ViewData["Title"] = "Pagina Principală";
 }
 
-<div class="text-center">
+<div class="text-center mt-5">
     <h1>@ViewData["Message"]</h1>
-    <a href="@Url.Action("Counter", "Home")">
-        <button>Accesează pagina de Counter</button>
-    </a>
-    <a href="@Url.Action("Login", "Administrator")">
-        <button>Logare</button>
-    </a>
-    <a href="@Url.Action("List", "Administrator")" class="btn btn-primary">Vezi administratorii</a> <!-- Link-ul către lista administratorilor -->
-
-    <a href="@Url.Action("Login", "Student")" class="btn btn-primary">Logare Student</a>
-
+    <div class="mt-4">
+        <a href="@Url.Action("Counter", "Home")" class="btn btn-secondary btn-lg m-2">
+            Accesează pagina de Counter
+        </a>
+        <a href="@Url.Action("Login", "Administrator")" class="btn btn-primary btn-lg m-2">
+            Logare Administrator
+        </a>
+        <a href="@Url.Action("List", "Administrator")" class="btn btn-info btn-lg m-2">
+            Vezi administratorii
+        </a>
+        <a href="@Url.Action("Login", "Student")" class="btn btn-success btn-lg m-2">
+            Logare Student
+        </a>
+    </div>
 </div>
