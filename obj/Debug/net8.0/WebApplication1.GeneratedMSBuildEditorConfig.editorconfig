@@ -26,8 +26,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Valentin\RiderProjects\WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Valentin/RiderProjects/WebApp/Views/Administrator/AdminWindow.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxBZG1pbldpbmRvdy5jc2h0bWw=
+[C:/Users/Valentin/RiderProjects/WebApp/Views/Administrator/AddStudentForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxBZGRTdHVkZW50Rm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Valentin/RiderProjects/WebApp/Views/Administrator/AddStudentsPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxBZGRTdHVkZW50c1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Valentin/RiderProjects/WebApp/Views/Administrator/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxBZG1pbkRhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Valentin/RiderProjects/WebApp/Views/Administrator/List.cshtml]

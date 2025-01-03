@@ -1,8 +1,7 @@
 ﻿using WebApplication1.Models;
-
+using Microsoft.EntityFrameworkCore;
 namespace WebApplication1
 {
-    using Microsoft.EntityFrameworkCore;
 
     public class AppDbContext : DbContext
     {

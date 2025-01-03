@@ -33,7 +33,7 @@ namespace WebApplication1.Controllers
                 ViewData["Message"] = null; // Poți seta mesajul la null sau la un alt mesaj
             }
 
-            return View(administratori);
+            return View();
         }
 
         [HttpGet]
@@ -53,7 +53,7 @@ namespace WebApplication1.Controllers
             {
                 // Dacă autentificarea este reușită
                 // Poți seta o sesiune, un cookie sau redirecționa utilizatorul către altă pagină
-                return View("AdminWindow");
+                return View("AdminDashboard");
             }
             else
             {
@@ -62,5 +62,10 @@ namespace WebApplication1.Controllers
                 return View();
             }
         }
+        
+        
+        
+
+        
     }
 }
