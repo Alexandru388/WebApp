@@ -1,0 +1,19 @@
+﻿@model WebApplication1.Models.Camin
+
+<h2>Adaugă un Cămin</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label for="Nume">Nume</label>
+        <input type="text" id="Nume" name="Nume" value="@Model?.Nume" required />
+    </div>
+    <div>
+        <label for="Adresa">Adresa</label>
+        <input type="text" id="Adresa" name="Adresa" value="@Model?.Adresa" required />
+    </div>
+    <div>
+        <label for="NumarCamere">Număr Camere</label>
+        <input type="number" id="NumarCamere" name="NumarCamere" value="@Model?.NumarCamere" required min="1" />
+    </div>
+    <button type="submit">Adaugă</button>
+</form>

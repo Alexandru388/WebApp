@@ -4,10 +4,17 @@ using WebApplication1;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
+// Configurare logare
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole(); // Adaugă logare în consolă (poți adăuga și în fișiere, etc.)
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 
 var app = builder.Build();

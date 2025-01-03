@@ -6,11 +6,7 @@ public class Camin
     public string Nume { get; set; }
     public string Adresa { get; set; }
     public int NumarCamere { get; set; }
-    public Universitate Universitate { get; set; } // Relație cu Universitate
-    public List<Camera> Camere { get; set; } // Relație 1 la M cu Camere
-
-    public Camin()
-    {
-        Camere = new List<Camera>();
-    }
+       
+    public int UniversitateID { get; set; }  // Aici se păstrează ID-ul
+    public ICollection<Camera> Camere { get; set; } // Trebuie să fie o colecție
 }

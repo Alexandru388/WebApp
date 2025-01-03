@@ -1,0 +1,27 @@
+﻿/PasswordHasher.cs
+# Fișiere de compilare
+bin/
+obj/
+
+# Fișiere de baze de date locale
+*.db
+
+# Fișierele de configurare ale Rider
+.idea/
+
+# Fișiere de configurare pentru sistemele de operare
+.DS_Store
+Thumbs.db
+
+# Fisierele de configurare pentru ASP.NET Core
+appsettings.Development.json
+appsettings.Production.json
+
+# Fisierele de jurnal
+*.log
+
+# Fisiere de testare
+coverage/
+
+# Fisierele de backup
+*.bak
