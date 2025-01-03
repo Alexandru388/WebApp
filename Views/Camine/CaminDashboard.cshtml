@@ -39,12 +39,15 @@
         </button>
     </a>
 
-    <a asp-action="OrdonareNume" asp-controller="Camine" style="text-decoration: none;">
-        <button style="margin: 10px; padding: 15px; background-color: #FF9800; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
-            Ordonare după Nume
-        </button>
-    </a>
-    <a asp-action="OrdonareCamere" asp-controller="Camine" style="text-decoration: none;">
+    <div style="text-align: center; margin-top: 20px;">
+        <a asp-action="AfisareCamineOrdonate" asp-controller="Camine" style="text-decoration: none;">
+            <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Vezi Căminele Ordonate Alfabetic
+            </button>
+        </a>
+    </div>
+
+    <a asp-action="AfisareCamineOrdonateDupaCamere" asp-controller="Camine" style="text-decoration: none;">
         <button style="margin: 10px; padding: 15px; background-color: #F44336; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
             Ordonare după Număr Camere Disponibile
         </button>
