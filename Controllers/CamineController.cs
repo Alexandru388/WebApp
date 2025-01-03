@@ -64,14 +64,13 @@ namespace WebApplication1.Controllers
             }
 
             // Executa un query SQL folosind SqliteParameter pentru SQLite
-            string sql = "INSERT INTO Camine (Nume, Adresa, NumarCamere, UniversitateID) VALUES (@Nume, @Adresa, @NumarCamere, @UniversitateID)";
+            string sql = "INSERT INTO Camine (Nume, Adresa, NumarCamere, UniversitateID) VALUES (@Nume, @Adresa, @NumarCamere, 1)";
 
             // Foloseste SqliteParameter in loc de SqlParameter
             _context.Database.ExecuteSqlRaw(sql,
                 new SqliteParameter("@Nume", camin.Nume),
                 new SqliteParameter("@Adresa", camin.Adresa),
-                new SqliteParameter("@NumarCamere", camin.NumarCamere),
-                new SqliteParameter("@UniversitateID", camin.UniversitateID)
+                new SqliteParameter("@NumarCamere", camin.NumarCamere)
             );
 
             return RedirectToAction("CaminDashboard", "Camine");
