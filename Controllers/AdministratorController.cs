@@ -2,7 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -11,11 +14,14 @@ namespace WebApplication1.Controllers
     {
         private readonly AppDbContext _context;
         private readonly ILogger<AdministratorController> _logger;
+        private readonly PasswordHasher<Administrator> _passwordHasher;
 
+        // Constructorul cu injectarea dependențelor
         public AdministratorController(AppDbContext context, ILogger<AdministratorController> logger)
         {
             _context = context;
             _logger = logger;
+            _passwordHasher = new PasswordHasher<Administrator>();  // Inițializezi PasswordHasher
         }
 
         // Actiune pentru a obtine administratorii din baza de date
@@ -43,7 +49,8 @@ namespace WebApplication1.Controllers
             return View(administratori);
         }
 
-        [HttpGet]
+        // Metoda pentru a accesa formularul de login
+      [HttpGet]
         public IActionResult Login()
         {
             return View();
@@ -52,28 +59,61 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string email, string parola)
         {
-            // Logare incercare de autentificare
             _logger.LogInformation($"Tentativa de autentificare pentru email: {email}");
 
-            // Cauta administratorul cu email-ul si parola specificate
             var admin = await _context.Administratori
-                .FirstOrDefaultAsync(a => a.Email == email && a.Parola == parola);
+                .FirstOrDefaultAsync(a => a.Email == email);
 
             if (admin != null)
             {
-                // Logare autentificare reusita
-                _logger.LogInformation($"Autentificare reusita pentru {email}.");
+                // Verificăm parola cu hash-ul stocat
+                bool isPasswordCorrect = VerifyPassword(admin.Parola, parola);  // Verificare
 
-                return RedirectToAction("CaminDashboard", "Camine");  // Redirectionare
+                if (isPasswordCorrect)
+                {
+                    _logger.LogInformation($"Autentificare reușită pentru {email}.");
+                    return RedirectToAction("CaminDashboard", "Camine");
+                }
+                else
+                {
+                    _logger.LogWarning($"Autentificare eșuată pentru {email}. Parola incorectă.");
+                    ViewData["ErrorMessage"] = "Parola este incorectă.";
+                }
             }
             else
             {
-                // Logare autentificare esuata
-                _logger.LogWarning($"Autentificare esuata pentru {email}. Parola sau email-ul incorecte.");
+                _logger.LogWarning($"Autentificare eșuată pentru {email}. Email-ul nu există.");
+                ViewData["ErrorMessage"] = "Email-ul nu există.";
+            }
 
-                // Afișează mesaj de eroare
-                ViewData["ErrorMessage"] = "Email-ul sau parola sunt incorecte.";
-                return View();
+            return View();
+        }
+
+        // Metodă pentru a verifica parola criptată
+        private bool VerifyPassword(string storedHash, string inputPassword)
+        {
+            // Criptăm parola introdusă de utilizator
+            string inputHash = ComputeSha256Hash(inputPassword);
+
+            // Comparăm hash-ul stocat cu cel introdus
+            return storedHash.Equals(inputHash, StringComparison.OrdinalIgnoreCase);
+        }
+
+        // Metodă pentru criptarea parolei folosind SHA256
+        private static string ComputeSha256Hash(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // Aplicăm SHA256 asupra parolei
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                // Convertim byte[] la string hexazecimal
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
             }
         }
     }
