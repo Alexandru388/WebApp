@@ -1,6 +1,6 @@
 ﻿namespace WebApplication1.Models;
 
-public class Camin
+public class Camin2
 {
     public int CaminID { get; set; }
     public string Nume { get; set; }

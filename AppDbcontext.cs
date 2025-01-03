@@ -16,16 +16,17 @@ namespace WebApplication1
         
         public DbSet<CazareInfo> CazareInfos { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            // Configure CazareInfo as a keyless entity
-            modelBuilder.Entity<CazareInfo>().HasNoKey();
-        }
-
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CazareInfo>().HasNoKey();
+            modelBuilder.Entity<Models.Camin>().HasNoKey();
+        }
+        
+        
     }
 }

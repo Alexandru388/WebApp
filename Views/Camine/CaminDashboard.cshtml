@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Dacă folosești un layout general
+}
+
+<h2 style="text-align: center; margin-top: 20px;">Gestionare Cămine</h2>
+<p style="text-align: center;">Adaugă un nou cămin sau gestionează căminele existente:</p>
+
+<!-- Formular pentru adăugarea unui cămin -->
+<div style="margin: 20px auto; width: 50%; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+    <h3 style="text-align: center;">Adaugă un Cămin</h3>
+    <form asp-action="CreateCaminManual" asp-controller="Camine" method="post">
+        <div style="margin-bottom: 15px;">
+            <label for="Nume" style="display: block; margin-bottom: 5px;">Nume Cămin</label>
+            <input type="text" id="Nume" name="Nume" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="Adresa" style="display: block; margin-bottom: 5px;">Adresă</label>
+            <input type="text" id="Adresa" name="Adresa" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="NumarCamere" style="display: block; margin-bottom: 5px;">Număr Camere</label>
+            <input type="number" id="NumarCamere" name="NumarCamere" required min="1" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" />
+        </div>
+        <input type="hidden" id="UniversitateID" name="UniversitateID" value="1" />
+
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+            Adaugă Cămin
+        </button>
+    </form>
+</div>
+
+<!-- Butoane pentru gestionarea căminelor -->
+<div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+    <a asp-action="AfisareCamine" asp-controller="Camine" style="text-decoration: none;">
+        <button style="margin: 10px; padding: 15px; background-color: #2196F3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+            Listare Cămine
+        </button>
+    </a>
+
+    <a asp-action="OrdonareNume" asp-controller="Camine" style="text-decoration: none;">
+        <button style="margin: 10px; padding: 15px; background-color: #FF9800; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+            Ordonare după Nume
+        </button>
+    </a>
+    <a asp-action="OrdonareCamere" asp-controller="Camine" style="text-decoration: none;">
+        <button style="margin: 10px; padding: 15px; background-color: #F44336; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+            Ordonare după Număr Camere Disponibile
+        </button>
+    </a>
+</div>
