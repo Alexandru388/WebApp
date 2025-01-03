@@ -121,6 +121,7 @@ namespace WebApplication1.Controllers
                 TempData["ErrorMessage"] = "A aparut o eroare la stergerea camerei.";
                 return RedirectToAction("GestionareCamereDashboard");
             }
+            
         }
     }
 }
