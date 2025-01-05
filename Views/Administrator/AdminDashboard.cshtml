@@ -1,0 +1,35 @@
+@model IEnumerable<WebApplication1.Models.Administrator>
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2>Welcome</h2>
+
+<div style="margin: 20px auto; width: 50%; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+    <a asp-action="CreateCaminManual" asp-controller="Camine" style="text-decoration: none;">
+        <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Adaugare camin
+        </button>
+    </a>
+</div>
+<div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+    <a asp-action="AddStudentDashboard" asp-controller="AddStudent" style="text-decoration: none;">
+        <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Adaugare student
+        </button>
+    </a>
+</div>
+
+@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+{
+    <div class="alert alert-danger mt-2">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessage"]
+    </div>
+}
