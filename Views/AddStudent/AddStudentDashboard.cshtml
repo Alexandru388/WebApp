@@ -1,5 +1,6 @@
 ﻿@model WebApplication1.Models.StudentViewModel
 
+
 <h2 style="text-align: center;">Adăugare Student</h2>
 
 <div>
@@ -30,6 +31,13 @@
 
         <button type="submit" class="btn btn-primary">Adaugă Student</button>
     </form>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+        <a asp-action="AfisareStudenti" asp-controller="AddStudent" style="text-decoration: none;">
+            <button style="margin: 10px; padding: 15px; background-color: #2196F3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+                Listare Studenti
+            </button>
+        </a>
+    </div>
 </div>
 
 @section Scripts {
