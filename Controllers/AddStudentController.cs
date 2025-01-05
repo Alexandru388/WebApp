@@ -83,6 +83,6 @@ public class AddStudentController: Controller
             })
             .ToList();
 
-        return View();
+        return View(studenti);
     }
 }
