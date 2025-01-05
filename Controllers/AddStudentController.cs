@@ -55,7 +55,7 @@ public class AddStudentController: Controller
     {
         if (string.IsNullOrEmpty(student.Nume) || string.IsNullOrEmpty(student.CNP) || string.IsNullOrEmpty(student.NumarMatricol)|| decimal.IsNegative(student.NotaCazare))
         {
-            return View("AddStudentDashboard", student); // Returneaza mesaj de eroare
+            return View("AddStudentDashboard"); // Returneaza mesaj de eroare
         }
 
         // Executa un query SQL folosind SqliteParameter pentru SQLite
@@ -74,10 +74,8 @@ public class AddStudentController: Controller
     public IActionResult AfisareStudenti()
     {
         var studenti = _context.Studenti
-            //.Include(st => st) // Include relatia cu Camere
-            .Select(st => new Student
+            .Select(st => new StudentViewModel
             {
-                StudentID = st.StudentID,
                 Nume = st.Nume,
                 CNP = st.CNP,
                 NumarMatricol = st.NumarMatricol,
@@ -85,6 +83,6 @@ public class AddStudentController: Controller
             })
             .ToList();
 
-        return View(studenti);
+        return View();
     }
 }

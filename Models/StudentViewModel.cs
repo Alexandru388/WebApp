@@ -5,9 +5,12 @@ using System.ComponentModel.DataAnnotations;
 public class StudentViewModel
 {
     [Required(ErrorMessage = "Nume is required.")]
+    //[RegularExpression("^[A-Z][a-z]*$", ErrorMessage = "Numele trebuie sa inceapa cu litera mare si sa continue cu litere mici")]
     public string Nume { get; set; }
 
     [Required(ErrorMessage = "CNP is required.")]
+    [RegularExpression("[0-9]{13}", ErrorMessage = "CNP ul trebuie sa aibe exact 13 cifre")]
+
     public string CNP { get; set; }
 
     [Required(ErrorMessage = "Număr Matricol is required.")]
@@ -15,6 +18,6 @@ public class StudentViewModel
     public string NumarMatricol { get; set; }
 
     [Required(ErrorMessage = "Nota Cazare is required.")]
-    [Range(1, 10, ErrorMessage = "Nota Cazare must be between 1 and 10.")]
-    public int NotaCazare { get; set; }
+    [Range(1, 10, ErrorMessage = "Nota Cazare trebuie sa fie intre 1 and 10.")]
+    public decimal NotaCazare { get; set; }
 }
