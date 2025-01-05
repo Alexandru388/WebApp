@@ -72,7 +72,8 @@ namespace WebApplication1.Controllers
                 if (isPasswordCorrect)
                 {
                     _logger.LogInformation($"Autentificare reușită pentru {email}.");
-                    return RedirectToAction("CaminDashboard", "Camine");
+                    //return RedirectToAction("CaminDashboard", "Camine");
+                    return View("AdminDashboard");
                 }
                 else
                 {

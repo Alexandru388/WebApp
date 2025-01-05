@@ -1,0 +1,42 @@
+﻿@{
+Layout = "~/Views/Shared/_Layout.cshtml"; // Dacă folosești un layout general
+}
+
+<h2 style="text-align: center; margin-top: 20px;">Adaugare Studenti</h2>
+<p style="text-align: center;">Adaugă un nou student</p>
+
+<!-- Formular pentru adăugarea unui student -->
+<div style="margin: 20px auto; width: 50%; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+    <h3 style="text-align: center;">Adaugă un studnet</h3>
+    <form asp-action="AdaugareStudent" asp-controller="AddStudent" method="post">
+        <div style="margin-bottom: 15px;">
+            <label for="Nume" style="display: block; margin-bottom: 5px;">Nume Student</label>
+            <input type="text" class="form-control" id="Nume" name="Nume" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="CNP" style="display: block; margin-bottom: 5px;">CNP</label>
+            <input type="text" class="form-control" id="CNP" name="CNP" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="NumarMatricol" style="display: block; margin-bottom: 5px;">Număr Matricol</label>
+            <input type="text" class="form-control" id="NumarMatricol" name="NumarMatricol" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" />
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="NotaCazare" style="display: block; margin-bottom: 5px;">Nota Cazare</label>
+            <input type="number" class="form-control" id="NotaCazare" name="NotaCazare" required min="1" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" />
+        </div>        
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+            Adaugă Student
+        </button>
+    </form>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+        <a asp-action="AfisareStudenti" asp-controller="AddStudent" style="text-decoration: none;">
+            <button style="margin: 10px; padding: 15px; background-color: #2196F3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+                Listare Studenti
+            </button>
+        </a>
+    </div>
+</div>
+
+
+
