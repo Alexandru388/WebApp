@@ -71,6 +71,11 @@ public class AddStudentController: Controller
 
         return RedirectToAction("AddStudentDashboard", "AddStudent");
     }
+
+    public IActionResult StergereStudent(Student studentID)
+    {
+        return View(studentID);
+    }
     public IActionResult AfisareStudenti()
     {
         var studenti = _context.Studenti
