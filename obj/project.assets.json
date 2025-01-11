@@ -5884,19 +5884,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Valentin\\.nuget\\packages\\": {}
+    "C:\\Users\\bogda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Valentin\\RiderProjects\\WebApp\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\bogda\\RiderProjects\\WebApp\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\Valentin\\RiderProjects\\WebApp\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\Valentin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Valentin\\RiderProjects\\WebApp\\obj\\",
+      "projectPath": "C:\\Users\\bogda\\RiderProjects\\WebApp\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\bogda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bogda\\RiderProjects\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\Valentin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bogda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5975,7 +5976,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\bogda\\.dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
