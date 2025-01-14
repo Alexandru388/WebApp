@@ -2,19 +2,26 @@
     ViewData["Title"] = "Logare Student";
 }
 
-<h2>Logare Student</h2>
+<h2 class="text-center">Autentificare student</h2>
 
-<form method="post" asp-action="Login">
-    <div class="form-group">
-        <label for="nume">Nume</label>
-        <input type="text" class="form-control" id="nume" name="nume" required />
-    </div>
-    <div class="form-group">
-        <label for="numarMatricol">Număr Matricol</label>
-        <input type="text" class="form-control" id="numarMatricol" name="numarMatricol" required />
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
+<!-- Formularul de logare cu background color similar celorlalte pagini -->
+<div style="max-width: 400px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <form method="post" asp-action="Login">
+        <!-- Centrarea label-urilor și a câmpurilor de input -->
+        <div class="form-group">
+            <label for="nume" style="display: block; text-align: center; width: 100%;">Nume</label>
+            <input type="text" class="form-control" id="nume" name="nume" required style="margin: 0 auto; display: block; width: 80%;" />
+        </div>
+        <div class="form-group">
+            <label for="numarMatricol" style="display: block; text-align: center; width: 100%;">Număr Matricol</label>
+            <input type="text" class="form-control" id="numarMatricol" name="numarMatricol" required style="margin: 0 auto; display: block; width: 80%;" />
+        </div>
+        <!-- Centrarea butonului de login -->
+        <div style="text-align: center;">
+            <button type="submit" class="btn btn-login">Login</button>
+        </div>
+    </form>
+</div>
 
 @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
 {
@@ -22,3 +29,39 @@
         @ViewData["ErrorMessage"]
     </div>
 }
+
+<style>
+    /* Stiluri pentru formular și fundal */
+    .form-group {
+        margin-bottom: 15px;
+        text-align: center; /* Centrăm etichetele și câmpurile */
+    }
+
+    /* Stiluri pentru butonul de login */
+    .btn-login {
+        padding: 10px 20px;
+        background-color: #28a745; /* Verde pentru buton */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 80%; /* Întinde butonul pe 80% din lățimea formularului */
+        transition: background-color 0.3s, transform 0.3s; /* Efect de hover */
+        margin-top: 20px; /* Spațiu între buton și câmpurile de input */
+    }
+
+    .btn-login:hover {
+        background-color: #218838; /* Verde mai închis la hover */
+        transform: scale(1.05); /* Efect de mărire a butonului */
+    }
+
+    /* Stil pentru alerta de eroare */
+    .alert {
+        padding: 15px;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+        border-radius: 5px;
+    }
+</style>
