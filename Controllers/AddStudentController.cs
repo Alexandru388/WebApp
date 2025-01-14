@@ -71,21 +71,7 @@ public class AddStudentController: Controller
 
         return RedirectToAction("AddStudentDashboard", "AddStudent");
     }
-
-    public async Task<IActionResult> GestionareCamereDashboard()
-    {
-        try
-        {
-            ViewBag.Camine = await _context.Camine.ToListAsync();
-            return View();
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Eroare la incarcarea listei de camine.");
-            TempData["ErrorMessage"] = "A aparut o eroare la incarcarea datelor.";
-            return View();
-        }
-    }
+    
     public async Task<IActionResult> StergereStudentDashboard()
     {
         try
