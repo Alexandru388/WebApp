@@ -4,32 +4,87 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="text-align: center; margin-top: 20px;">Lista Căminelor</h2>
+<h2 style="text-align: center; margin-top: 20px; color: #333;">Lista Căminelor</h2>
 
-<table style="width: 80%; margin: 20px auto; border-collapse: collapse; border: 1px solid #ddd;">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+    }
+
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .btn-back {
+        padding: 10px 20px;
+        background-color: #e74c3c; /* Muted red */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-back:hover {
+        background-color: red; 
+    }
+
+</style>
+
+<table>
     <thead>
-    <tr style="background-color: #f4f4f4;">
-        <th style="padding: 10px; text-align: left;">Nume Cămin</th>
-        <th style="padding: 10px; text-align: left;">Adresă</th>
-        <th style="padding: 10px; text-align: left;">Camere Libere</th>
+    <tr>
+        <th>Nume Cămin</th>
+        <th>Adresă</th>
+        <th>Camere Libere</th>
     </tr>
     </thead>
     <tbody>
     @foreach (var camin in Model)
     {
         <tr>
-            <td style="padding: 10px;">@camin.Nume</td>
-            <td style="padding: 10px;">@camin.Adresa</td>
-            <td style="padding: 10px;">@camin.CamereLibere</td>
+            <td>@camin.Nume</td>
+            <td>@camin.Adresa</td>
+            <td>@camin.CamereLibere</td>
         </tr>
     }
     </tbody>
 </table>
 
-<div style="text-align: center; margin-top: 20px;">
-    <a asp-action="CaminDashboard" asp-controller="Camine" style="text-decoration: none;">
-        <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
-            Înapoi la formularul de adăugare cămin
-        </button>
+<div class="button-container">
+    <a asp-action="CaminDashboard" asp-controller="Camine" class="btn-back">
+        Înapoi la formularul de adăugare cămin
     </a>
 </div>
