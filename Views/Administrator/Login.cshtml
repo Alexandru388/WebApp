@@ -2,29 +2,84 @@
     ViewData["Title"] = "Login Administrator";
 }
 
-<h2>Login</h2>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+    }
+    .login-container {
+        max-width: 400px;
+        margin: 60px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    .login-container h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        font-weight: bold;
+        color: #4CAF50;
+    }
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+    .btn-primary:hover {
+        background-color: #45a049;
+    }
+    .alert {
+        margin-top: 20px;
+        padding: 15px;
+        color: white;
+        background-color: #d9534f;
+        border-radius: 5px;
+        text-align: center;
+    }
+</style>
 
-<form method="post" asp-action="Login">
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required />
-    </div>
-    <div class="form-group">
-        <label for="parola">Parola</label>
-        <input type="password" class="form-control" id="parola" name="parola" required />
-    </div>
-    <button type="submit" class="btn btn-primary">Login Administrator</button>
-</form>
+<div class="login-container">
+    <h2>Autentificare</h2>
+    <form method="post" asp-action="Login">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+            <label for="parola">Parola</label>
+            <input type="password" class="form-control" id="parola" name="parola" required />
+        </div>
+        <button type="submit" class="btn-primary">Login</button>
+    </form>
 
-@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
-{
-    <div class="alert alert-danger mt-2">
-        @ViewData["ErrorMessage"]
-    </div>
-}
-@if (ViewData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger">
-        @ViewData["ErrorMessage"]
-    </div>
-}
+    @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+    {
+        <div class="alert">
+            @ViewData["ErrorMessage"]
+        </div>
+    }
+</div>
