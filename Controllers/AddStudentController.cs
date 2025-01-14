@@ -27,7 +27,7 @@ public class AddStudentController: Controller
     [HttpPost]
     public IActionResult Create(Student student)
     {
-        _logger.LogInformation("Se incearca adaugarea unui camin cu numele: {Nume}", student.Nume);
+        _logger.LogInformation("Se incearca adaugarea unui student cu numele: {Nume}", student.Nume);
 
         if (ModelState.IsValid)
         {
@@ -36,7 +36,7 @@ public class AddStudentController: Controller
                 _logger.LogInformation("Modelul este valid. Se adauga studentul in baza de date.");
                 _context.Studenti.Add(student);
                 _context.SaveChanges();
-                _logger.LogInformation("Caminul {Nume} a fost adaugat cu succes.", student.Nume);
+                _logger.LogInformation("Studentul {Nume} a fost adaugat cu succes.", student.Nume);
                 return RedirectToAction("AddStudentDashboard", "AddStudent");
             }
             catch (Exception ex)
@@ -72,9 +72,57 @@ public class AddStudentController: Controller
         return RedirectToAction("AddStudentDashboard", "AddStudent");
     }
 
-    public IActionResult StergereStudent(Student studentID)
+    public async Task<IActionResult> GestionareCamereDashboard()
     {
-        return View(studentID);
+        try
+        {
+            ViewBag.Camine = await _context.Camine.ToListAsync();
+            return View();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Eroare la incarcarea listei de camine.");
+            TempData["ErrorMessage"] = "A aparut o eroare la incarcarea datelor.";
+            return View();
+        }
+    }
+    public async Task<IActionResult> StergereStudentDashboard()
+    {
+        try
+        {
+            ViewBag.Studenti = await _context.Camine.ToListAsync();
+            return View();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Eroare la incarcarea listei de studenti.");
+            TempData["ErrorMessage"] = "A aparut o eroare la incarcarea datelor.";
+            return View();
+        }
+    }
+
+    public async Task<IActionResult> StergereStudent(int studentID)
+    {
+        var student = await _context.Studenti.Include(s => s.Cazari).FirstOrDefaultAsync(s => s.StudentID == studentID);
+        if (student == null)
+        {
+            TempData["ErrorMessage"] = "Studentul nu a fost gasit.";
+            return RedirectToAction("AddStudentDashboard");
+        }
+
+        try
+        {
+            _context.Studenti.Remove(student);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Studentul a fost sters cu succes.";
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Eroare la stergerea studentului.");
+            TempData["ErrorMessage"] = "A aparut o eroare la stergerea studentului.";
+        }
+        return RedirectToAction("AddStudentDashboard");
+
     }
     public IActionResult AfisareStudenti()
     {

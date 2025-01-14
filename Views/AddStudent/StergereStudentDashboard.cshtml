@@ -1,0 +1,12 @@
+﻿@model WebApplication1.Models.StudentViewModel
+
+<div class="card-body">
+    <form asp-action="StergereStudent" method="post">
+        <div class="form-group">
+            <label for="">Nume Student</label>
+            <input type="number" id="studentID" name="StudentID" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-danger">Șterge Student</button>
+    </form>
+</div>
