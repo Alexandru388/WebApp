@@ -100,7 +100,6 @@ public class AddStudentController: Controller
             return View();
         }
     }
-
     public async Task<IActionResult> StergereStudent(int studentID)
     {
         var student = await _context.Studenti.Include(s => s.Cazari).FirstOrDefaultAsync(s => s.StudentID == studentID);
