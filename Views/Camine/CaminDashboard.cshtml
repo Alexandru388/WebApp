@@ -28,49 +28,77 @@
     </form>
 </div>
 
-<!-- Butoane pentru gestionarea căminelor -->
 <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
     <a asp-action="AfisareCamine" asp-controller="Camine" style="text-decoration: none;">
-        <button class="btn-listare" style="margin: 10px; padding: 15px; background-color: #2196F3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+        <button class="btn-listare">
             Listare Cămine
         </button>
     </a>
 
     <a asp-action="AfisareCamineOrdonate" asp-controller="Camine" style="text-decoration: none;">
-        <button class="btn-alfabetic" style="margin: 10px; padding: 15px; background-color: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+        <button class="btn-alfabetic">
             Vezi Căminele Ordonate Alfabetic
         </button>
     </a>
 
     <a asp-action="AfisareCamineOrdonateDupaCamere" asp-controller="Camine" style="text-decoration: none;">
-        <button class="btn-ordonare" style="margin: 10px; padding: 15px; background-color: #F44336; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+        <button class="btn-ordonare">
             Ordonare după Număr Camere Disponibile
         </button>
     </a>
 </div>
 
-<!-- Stilizare pentru hover-ul butoanelor -->
 <style>
     body {
-        background-color: #f4f4f9; /* Set background color for the entire page */
+        background-color: #f4f4f9;
         font-family: Arial, sans-serif;
     }
+    
+    .btn-listare {
+        margin: 10px;
+        padding: 15px;
+        background-color: #2196F3;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
 
-    /* Hover effects for all buttons */
     .btn-listare:hover {
-        background-color: #1976d2; /* Darker blue for hover effect */
+        background-color: blue;
+    }
+
+    .btn-alfabetic {
+        margin: 10px;
+        padding: 15px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
     }
 
     .btn-alfabetic:hover {
-        background-color: #45a049; /* Darker green for hover effect */
+        background-color: green;
+    }
+
+    .btn-ordonare {
+        margin: 10px;
+        padding: 15px;
+        background-color: #F44336;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
     }
 
     .btn-ordonare:hover {
-        background-color: #d32f2f; /* Darker red for hover effect */
-    }
-
-    /* Ensuring smooth transition for hover effect */
-    button {
-        transition: background-color 0.3s ease; /* Only change the background color smoothly */
+        background-color: red;
     }
 </style>
