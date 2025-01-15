@@ -50,15 +50,15 @@
         tr:hover {
             background-color: #f1f1f1; /* Light hover effect for rows */
         }
-        
+
         .btn-back {
             padding: 10px 20px;
-            background-color: #f44336;
+            background-color: #e74c3c; /* Muted red */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 1rem;
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
@@ -93,7 +93,11 @@
 </table>
 
 <div style="text-align: center; margin-top: 20px;">
-    <a asp-action="CaminDashboard" asp-controller="Camine" class="btn-back">Înapoi la pagina principală</a>
+    <a asp-action="CaminDashboard" asp-controller="Camine" style="text-decoration: none;">
+        <button class="btn-back">
+            Înapoi la pagina principală
+        </button>
+    </a>
 </div>
 
 </body>

@@ -4,34 +4,67 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="text-align: center; margin-top: 20px;">Lista Studentilor</h2>
+<h2 class="text-center" style="margin-top: 20px;">Lista Studenților</h2>
 
-<table style="width: 80%; margin: 20px auto; border-collapse: collapse; border: 1px solid #ddd;">
-    <thead>
-    <tr style="background-color: #f4f4f4;">
-        <th style="padding: 10px; text-align: left;">Nume Student</th>
-        <th style="padding: 10px; text-align: left;">CNP</th>
-        <th style="padding: 10px; text-align: left;">Numar Matricol</th>
-        <th style="padding: 10px; text-align: left;">Nota Cazare</th>
-    </tr>
-</table>
+<!-- Table Container -->
+<div style="max-width: 900px; margin: 0 auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <thead>
+        <tr style="background-color: #4CAF50; color: white;">
+            <th style="padding: 10px; text-align: left;">Nume Student</th>
+            <th style="padding: 10px; text-align: left;">CNP</th>
+            <th style="padding: 10px; text-align: left;">Număr Matricol</th>
+            <th style="padding: 10px; text-align: left;">Notă Cazare</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var student in Model)
+        {
+            <tr style="background-color: #f9f9f9;">
+                <td style="padding: 10px; border: 1px solid #ddd;">@student.Nume</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@student.CNP</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@student.NumarMatricol</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@student.NotaCazare</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
 
-<tbody>
-@foreach (var student in Model)
-{
-<tr>
-    <td style="padding: 10px;">@student.Nume</td>
-    <td style="padding: 10px;">@student.CNP</td>
-    <td style="padding: 10px;">@student.NumarMatricol</td>
-    <td style="padding: 10px;">@student.NotaCazare</td>
-</tr>
-}
-</tbody>
- 
 <div style="text-align: center; margin-top: 20px;">
     <a asp-action="AddStudentDashboard" asp-controller="AddStudent" style="text-decoration: none;">
-        <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        <button class="styled-button">
             Înapoi la formularul de adăugare student
         </button>
     </a>
 </div>
+
+<style>
+    body {
+        background-color: #f4f4f9;
+    }
+
+    .styled-button {
+        padding: 10px 20px;
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .styled-button:hover {
+        background-color: red;
+        transform: scale(1.05);
+    }
+
+    table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
