@@ -75,6 +75,11 @@ ViewData["Title"] = "Admin Dashboard";
             Gestionare camere
         </a>
     </div>
+    <div class="dashboard-button-container">
+        <a asp-action="Atribuire" asp-controller="Cazare" class="dashboard-button">
+            Atribuire camere
+        </a>
+    </div>
 
     @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
     {
