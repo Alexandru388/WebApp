@@ -1,21 +1,52 @@
 ﻿@{
-    ViewData["Title"] = "Pagina Principală";
+ViewData["Title"] = "Pagina Principală";
 }
 
 <div class="text-center mt-5">
     <h1>@ViewData["Message"]</h1>
-    <div class="mt-4">
-        <a href="@Url.Action("Counter", "Home")" class="btn btn-secondary btn-lg m-2">
-            Accesează pagina de Counter
-        </a>
-        <a href="@Url.Action("Login", "Administrator")" class="btn btn-primary btn-lg m-2">
-            Logare Administrator
-        </a>
-        <a href="@Url.Action("List", "Administrator")" class="btn btn-info btn-lg m-2">
-            Vezi administratorii
-        </a>
-        <a href="@Url.Action("Login", "Student")" class="btn btn-success btn-lg m-2">
-            Logare Student
-        </a>
+
+    <!-- Div pentru a adăuga un chenar și fundal colorat -->
+    <div style="padding: 20px; background-color: #f4f4f9; border-radius: 8px; border: 1px solid #ddd; display: inline-block; margin-top: 20px;">
+        <div class="mt-4">
+            <a href="@Url.Action("Counter", "Home")" class="btn btn-secondary btn-lg m-2 btn-hover">
+                Accesează pagina de Counter
+            </a>
+            <a href="@Url.Action("Login", "Administrator")" class="btn btn-primary btn-lg m-2 btn-hover">
+                Logare Administrator
+            </a>
+            <a href="@Url.Action("List", "Administrator")" class="btn btn-info btn-lg m-2 btn-hover">
+                Vezi administratorii
+            </a>
+            <a href="@Url.Action("Login", "Student")" class="btn btn-success btn-lg m-2 btn-hover">
+                Logare Student
+            </a>
+        </div>
     </div>
 </div>
+
+<style>
+    /* Adăugarea unui efect de hover pentru butoane */
+    .btn-hover {
+        transition: background-color 0.3s, transform 0.3s; /* Tranziție lină pentru culoare și efectul de mărire */
+    }
+
+    .btn-hover:hover {
+        transform: scale(1.05); /* Creșterea dimensiunii butonului la hover */
+    }
+
+    .btn-secondary:hover {
+        background-color: #6c757d; /* Ton mai închis pentru butonul secundar */
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Ton mai închis pentru butonul primar */
+    }
+
+    .btn-info:hover {
+        background-color: #17a2b8; /* Ton mai închis pentru butonul info */
+    }
+
+    .btn-success:hover {
+        background-color: #218838; /* Ton mai închis pentru butonul de succes */
+    }
+</style>

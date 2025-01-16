@@ -1,48 +1,47 @@
 ﻿@model WebApplication1.Models.StudentViewModel
 
+<h2 class="text-center">Adăugare Student</h2>
 
-<h2 style="text-align: center;">Adăugare Student</h2>
-
-<div>
+<!-- Container pentru formular cu stil consistent -->
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
     <form asp-action="Create" method="post">
-        <div>
-            <label>Nume Student</label>
-            <input asp-for="Nume" class="form-control" />
+        <div class="form-group">
+            <label for="Nume" style="text-align: center; display: block;">Nume Student</label>
+            <input asp-for="Nume" class="form-control" style="width: 80%; margin: 0 auto;" />
             <span asp-validation-for="Nume" class="text-danger"></span>
         </div>
 
-        <div>
-            <label>CNP</label>
-            <input asp-for="CNP" class="form-control" />
+        <div class="form-group">
+            <label for="CNP" style="text-align: center; display: block;">CNP</label>
+            <input asp-for="CNP" class="form-control" style="width: 80%; margin: 0 auto;" />
             <span asp-validation-for="CNP" class="text-danger"></span>
         </div>
 
-        <div>
-            <label>Număr Matricol</label>
-            <input asp-for="NumarMatricol" class="form-control" />
+        <div class="form-group">
+            <label for="NumarMatricol" style="text-align: center; display: block;">Număr Matricol</label>
+            <input asp-for="NumarMatricol" class="form-control" style="width: 80%; margin: 0 auto;" />
             <span asp-validation-for="NumarMatricol" class="text-danger"></span>
         </div>
 
-        <div>
-            <label>Nota Cazare</label>
-            <input asp-for="NotaCazare" class="form-control" />
+        <div class="form-group">
+            <label for="NotaCazare" style="text-align: center; display: block;">Nota Cazare</label>
+            <input asp-for="NotaCazare" class="form-control" style="width: 80%; margin: 0 auto;" />
             <span asp-validation-for="NotaCazare" class="text-danger"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary">Adaugă Student</button>
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" class="btn btn-submit">Adaugă Student</button>
+        </div>
     </form>
-    <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+
+    <div style="text-align: center; margin-top: 20px;">
         <a asp-action="AfisareStudenti" asp-controller="AddStudent" style="text-decoration: none;">
-            <button style="margin: 10px; padding: 15px; background-color: #2196F3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
-                Listare Studenti
-            </button>
+            <button class="btn btn-secondary">Listare Studenti</button>
         </a>
     </div>
-    <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+    <div style="text-align: center; margin-top: 10px;">
         <a asp-action="StergereStudentDashboard" asp-controller="AddStudent" style="text-decoration: none;">
-            <button style="margin: 10px; padding: 15px; background-color: #2196F3; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
-                Stergere studenti
-            </button>
+            <button class="btn btn-secondary">Stergere Studenti</button>
         </a>
     </div>
 </div>
@@ -52,3 +51,53 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 }
+
+<style>
+    body {
+        background-color: #f4f4f9;
+        font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .btn-submit {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 80%;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-submit:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+
+    .btn-secondary {
+        padding: 10px 20px;
+        background-color: #2196F3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 80%;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-secondary:hover {
+        background-color: #0B79E1;
+        transform: scale(1.05);
+    }
+</style>

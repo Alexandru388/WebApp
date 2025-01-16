@@ -4,21 +4,78 @@
     ViewData["Title"] = "Lista Administratorilor";
 }
 
-<h2>@ViewData["Title"]</h2>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+    }
+    .admin-list-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        padding: 10px;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #ddd;
+    }
+    li:last-child {
+        border-bottom: none;
+    }
+    .no-data {
+        font-size: 1rem;
+        text-align: center;
+        color: #999;
+    }
+    .btn-secondary {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #e74c3c;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        text-align: center;
+        transition: background-color 0.5s ease; /* Smooth transition effect */
+    }
+    .btn-secondary:hover {
+        background-color: red; /* Gray hover color */
+    }
+</style>
 
-@if (Model?.Any() == true)
-{
-    <ul>
-        @foreach (var admin in Model)
-        {
-            <li>@admin.Nume</li> <!-- Afișează numele fiecărui administrator -->
-        }
-    </ul>
-}
-else
-{
-    <p>@ViewData["Message"]</p> <!-- Mesaj personalizat dacă lista este goală -->
-}
+<div class="admin-list-container">
+    <h2>@ViewData["Title"]</h2>
 
+    @if (Model?.Any() == true)
+    {
+        <ul>
+            @foreach (var admin in Model)
+            {
+                <li>@admin.Nume</li> <!-- Display each administrator's name -->
+            }
+        </ul>
+    }
+    else
+    {
+        <p class="no-data">@ViewData["Message"]</p> <!-- Custom message if the list is empty -->
+    }
 
-<a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Înapoi la pagina principală</a>
+    <a href="@Url.Action("Index", "Home")" class="btn-secondary">Înapoi la pagina principală</a>
+</div>

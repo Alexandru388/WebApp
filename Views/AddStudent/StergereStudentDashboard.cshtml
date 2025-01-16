@@ -1,12 +1,39 @@
 ﻿@model WebApplication1.Models.StudentViewModel
 
-<div class="card-body">
+<h2 class="text-center">Ștergere Student</h2>
+
+<!-- Form Container -->
+<div style="max-width: 400px; margin: 0 auto; padding: 20px; background-color: #ffffff; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
     <form asp-action="StergereStudent" method="post">
-        <div class="form-group">
-            <label for="">Nume Student</label>
-            <input type="number" id="studentID" name="StudentID" class="form-control" required />
+        <div class="form-group" style="text-align: center;">
+            <label for="studentID" style="display: block; width: 100%;">Nume Student (ID)</label>
+            <input type="number" id="studentID" name="StudentID" class="form-control" required style="margin: 0 auto; width: 80%;" />
         </div>
 
-        <button type="submit" class="btn btn-danger">Șterge Student</button>
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" class="btn btn-delete">Șterge Student</button>
+        </div>
     </form>
 </div>
+
+<style>
+    body {
+        background-color: #f4f4f9;
+    }
+
+    .btn-delete {
+        padding: 10px 20px;
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn-delete:hover {
+        background-color: red;
+        transform: scale(1.05);
+    }
+</style>

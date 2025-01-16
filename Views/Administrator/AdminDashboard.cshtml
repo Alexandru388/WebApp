@@ -1,42 +1,85 @@
 @model IEnumerable<WebApplication1.Models.Administrator>
 
 @{
-    ViewData["Title"] = "Admin Dashboard";
+ViewData["Title"] = "Admin Dashboard";
 }
 
-<h2>Welcome</h2>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8; /* Soft background color */
+        color: #333;
+    }
+    .dashboard-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    .dashboard-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .dashboard-button-container {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+    }
+    .dashboard-button {
+        padding: 12px 24px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    .dashboard-button:hover {
+        background-color: #45a049;
+    }
+    .dashboard-alert {
+        margin-top: 20px;
+        padding: 15px;
+        color: white;
+        background-color: #d9534f;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+    }
+</style>
 
-<div style="margin: 20px auto; width: 50%; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
-    <a asp-action="CreateCaminManual" asp-controller="Camine" style="text-decoration: none;">
-        <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+<div class="dashboard-container">
+    <h2 class="dashboard-title">Bine ati venit!</h2>
+
+    <div class="dashboard-button-container">
+        <a asp-action="CreateCaminManual" asp-controller="Camine" class="dashboard-button">
             Adaugare camin
-        </button>
-    </a>
-</div>
-<div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-    <a asp-action="AddStudentDashboard" asp-controller="AddStudent" style="text-decoration: none;">
-        <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        </a>
+    </div>
+    <div class="dashboard-button-container">
+        <a asp-action="AddStudentDashboard" asp-controller="AddStudent" class="dashboard-button">
             Adaugare student
-        </button>
-    </a>
-</div>
-<div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-    <a asp-action="GestionareCamereDashboard" asp-controller="Camere" style="text-decoration: none;">
-        <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        </a>
+    </div>
+    <div class="dashboard-button-container">
+        <a asp-action="GestionareCamereDashboard" asp-controller="Camere" class="dashboard-button">
             Gestionare camere
-        </button>
-    </a>
-</div>
+        </a>
+    </div>
 
-@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
-{
-    <div class="alert alert-danger mt-2">
+    @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+    {
+    <div class="dashboard-alert">
         @ViewData["ErrorMessage"]
     </div>
-}
-@if (ViewData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger">
-        @ViewData["ErrorMessage"]
-    </div>
-}
+    }
+</div>
