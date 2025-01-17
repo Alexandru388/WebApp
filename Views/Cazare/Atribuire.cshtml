@@ -1,61 +1,94 @@
 ﻿@{
-ViewBag.Title = "Atribuire Camera";
-var studenti = ViewBag.Studenti as List<Student>;
-var camine = ViewBag.Camine as List<Camin>;
+    ViewBag.Title = "Atribuire Camera";
+    var studenti = ViewBag.Studenti as List<Student>;
+    var camine = ViewBag.Camine as List<Camin>;
 }
 
-<h2>Atribuire Camera</h2>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Atribuire Camera</h2>
 
-@if (TempData["Success"] != null)
-{
-<div class="alert alert-success">
-    @TempData["Success"]
-</div>
-}
-
-<form method="post" asp-action="Atribuire">
-    <div class="form-group">
-        <label for="studentId">Selectati Student</label>
-        <select class="form-control" id="studentId" name="studentId" required>
-            <option value="">-- Selectati --</option>
-            @if (studenti != null)
-            {
-            @foreach (var student in studenti)
-            {
-            <option value="@student.StudentID">@student.Nume</option>
-            }
-            }
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="caminId">Selectați Camin</label>
-        <select class="form-control" id="caminId" name="caminId" required>
-            <option value="">-- Selectați --</option>
-            @if (camine != null)
-            {
-            @foreach (var camin in camine)
-            {
-            <option value="@camin.CaminID">@camin.Nume</option>
-            }
-            }
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="numarCamera">Numar Camera</label>
-        <input type="number" class="form-control" id="numarCamera" name="numarCamera" required />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Atribuire</button>
-</form>
-
-@if (!ViewData.ModelState.IsValid)
-{
-<div class="alert alert-danger">
-    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+    @if (TempData["Success"] != null)
     {
-    <p>@error.ErrorMessage</p>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <form method="post" asp-action="Atribuire" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="studentId" class="form-label">Selectați Student</label>
+            <select class="form-select" id="studentId" name="studentId" required>
+                <option value="" selected disabled>-- Selectați --</option>
+                @if (studenti != null)
+                {
+                    @foreach (var student in studenti)
+                    {
+                        <option value="@student.StudentID">@student.Nume</option>
+                    }
+                }
+            </select>
+            <div class="invalid-feedback">
+                Vă rugăm să selectați un student.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="caminId" class="form-label">Selectați Camin</label>
+            <select class="form-select" id="caminId" name="caminId" required>
+                <option value="" selected disabled>-- Selectați --</option>
+                @if (camine != null)
+                {
+                    @foreach (var camin in camine)
+                    {
+                        <option value="@camin.CaminID">@camin.Nume</option>
+                    }
+                }
+            </select>
+            <div class="invalid-feedback">
+                Vă rugăm să selectați un camin.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="numarCamera" class="form-label">Numar Camera</label>
+            <input type="number" class="form-control" id="numarCamera" name="numarCamera" required />
+            <div class="invalid-feedback">
+                Vă rugăm să introduceți un număr valid pentru camera.
+            </div>
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Atribuire</button>
+        </div>
+    </form>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger mt-4">
+            <ul class="mb-0">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
     }
 </div>
-}
+
+<script>
+ 
+    (function () {
+        'use strict';
+        var forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>
